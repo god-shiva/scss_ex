@@ -1,0 +1,1387 @@
+@charset "UTF-8";
+
+/*common 변수*/
+.inner {
+  overflow: hidden;
+}
+
+$color-primary : #1d1d1f;
+$color-black : #000;
+$color-white : #fff;
+$font-size : 16px;
+$font-size-small : 11px;
+$font-size-normal : 30px;
+$font-size-large : 60px;
+
+
+//$url-images:;
+$w: 1000px;
+$w-min2: 980px;
+$w-min: 1230px;
+$w-max: 1300px;
+$w-max2: 1600px;
+
+$boolean: true;
+
+
+
+// /*반응형, 브라우저 크기가 767px 이하일때*/
+// @mixin mobile{
+//   @media (max-width: $mobile){
+//     @content;
+//   }
+// }
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+// @mixin tablet{
+//   @media (min-width: $mobile+1) and (max-width: $tablet){
+//    // @content;
+//   }
+// }
+
+// /*반응형, 브라우저 크기가 1024px 이상일때*/
+// @mixin desktop{
+//   @media (min-width: $desktop){
+//    // @content;
+//   }
+// }
+
+// /*넓이, 높이 자동 계산함수*/
+// @mixin square($size){
+//  // $calculated: 32px * $size;
+//  // width: $calculated;
+//  // height: $calculated;
+// }
+
+
+
+
+@mixin default_text {
+  //기본사이즈 크기 30px
+  font-size: $font-size-normal;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -.8px;
+}
+
+@mixin default_text2 {
+  //기본사이즈 크기 20px
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+
+
+/*mediquery*/
+//$mobile: 767px;
+//$tablet: 1199px;
+//$desktop: 1024px;
+//$desktop: 1200px;
+
+/*reset*/
+// html { 
+//   // -ms-text-size-adjust: 100%;
+//   // -webkit-text-size-adjust: 100%
+// }
+* {
+  font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif !important;
+  color: $color-primary;
+  font-size: $font-size;
+  word-break: keep-all;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: $color-primary;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+
+/*font common*/
+//$family: unquote("Droid+Sans");
+//@import url("http://fonts.googleapis.com/css?family=#{$family}");
+
+#wrap {
+  min-width: $w-max;
+}
+
+.gnb {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $font-size-small;
+  max-width: $w;
+  margin: auto;
+}
+
+.gnb nav {
+  width: calc(100% - 80px);
+
+  ul {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-menu {
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: $w;
+    background: #d6d6d6;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  header {
+    max-width: $w;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      color: $color-black;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    ul {
+      font-size: $font-size-small;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          height: 25px;
+        }
+
+        &:last-child a {
+          background: #0071e3;
+          color: $color-white;
+          padding: 0 10px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+}
+
+.sc1 {
+  text-align: center;
+  overflow: hidden;
+
+  div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: visible;
+
+    img {
+      max-width: 888px;
+      width: 40%;
+      z-index: 5;
+      margin: 0 auto;
+      padding: 2% 0;
+    }
+
+    h2 {
+      font-size: clamp(100px, 16vw, 300px);
+      font-weight: 700;
+      position: absolute;
+      z-index: 3;
+      letter-spacing: -.8vw;
+    }
+  }
+
+  p {
+    margin: auto;
+    padding: 10% 0;
+    width: 63%;
+    max-width: 900px;
+    @include default_text;
+  }
+}
+
+.sc2 {
+  min-width: 100%;
+  background: #000;
+  /*height:130vh;*/
+  position: relative;
+  min-width: 1200px;
+
+  div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin: auto;
+      position: absolute;
+      top: 10vh;
+      left: 0;
+      height: 100%;
+      z-index: 5;
+
+      li {
+        color: $color-white;
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 1.2;
+        width: 50%;
+        min-width: 1200px;
+        margin: 2% auto;
+        text-align: center;
+
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  video {
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+    button {
+      display: block;
+      font-size: 0;
+      position: -webkit-sticky;
+      position: sticky;
+      top: calc(100% - 55px);
+      left: calc(100% - 55px);
+      background: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/play_icon__dbmv349kdb42_large.svg) no-repeat center;
+      background-size: 30px;
+      width: 55px;
+      height: 55px;
+      border: none;
+      cursor: pointer;
+
+      &.stop {
+        background-image: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/pause_icon__d19cdsq3uu4i_large.svg);
+      }
+    }
+  }
+}
+
+.sc3 {
+  padding: 10% 0 0;
+  color: $color-primary;
+
+  .tit {
+    max-width: $w-max;
+    margin: auto;
+    overflow: hidden;
+
+    h3 {
+      font-size: 170px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.05em;
+
+      span {
+        font-size: 30px;
+        display: block;
+        letter-spacing: 0;
+      }
+    }
+
+    p {
+      width: 50%;
+      float: right;
+      padding: 10% 0 5%;
+      @include default_text;
+    }
+  }
+
+  .frameBox {
+    height: 2000px;
+    position: relative;
+    padding: 5% 0;
+
+    .moving {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      canvas {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .captions {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: $w-max;
+      margin: auto;
+      height: 100%;
+
+      p {
+        position: absolute;
+        color: #86868b;
+        width: 370px;
+        @include default_text2;
+
+        &.canopy-caption {
+          top: 75%;
+          left: 0;
+        }
+
+        &.frame-caption {
+          top: 85%;
+          left: 0;
+        }
+
+        &.tele-caption {
+          top: 80%;
+          right: 0 !important;
+        }
+
+        &.cups-caption {
+          top: 98%;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+        }
+
+        strong {
+          color: $color-black;
+        }
+      }
+    }
+  }
+
+  .scrollImg {
+    margin: 0 auto;
+    padding-top: 250px;
+    max-width: $w-max2;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 1800px;
+    overflow: hidden;
+
+    article {
+      overflow: hidden;
+      height: 100%;
+
+      &.left {
+        width: 65%;
+        position: relative;
+        height: 1450px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+        }
+      }
+
+      &.right {
+        width: 35%;
+
+        div:last-child {
+          padding-top: 15%;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        color: #86868b;
+        margin-top: 15px;
+        @include default_text2;
+      }
+    }
+  }
+
+
+  .bottomBox {
+    width: 100%;
+    position: relative;
+    height: 50vw;
+    overflow: hidden;
+
+    p.btn {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+
+      button {
+        display: block;
+        font-size: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        top: calc(100% - 55px);
+        left: calc(100% - 55px);
+        background: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/play_icon__dbmv349kdb42_large.svg) no-repeat center;
+        background-size: 30px;
+        width: 55px;
+        height: 55px;
+        border: none;
+        cursor: pointer;
+
+        &.stop {
+          background-image: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/pause_icon__d19cdsq3uu4i_large.svg);
+        }
+      }
+    }
+
+    video {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    .txt {
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 480px;
+      color: #fff;
+      @include default_text2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      p {
+        color: #d1e8fd;
+
+        strong {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.sc4 {
+  padding: 10% 0;
+  max-width: $w-max;
+  margin: auto;
+
+  h3 {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $color-primary;
+  }
+}
+
+.sc5 {
+  padding: 10% 0 0;
+  background: #000;
+  opacity: .9999;
+  overflow: hidden;
+
+  .tit {
+    max-width: $w-min;
+    margin: auto;
+    overflow: hidden;
+
+    h3 {
+      font-size: 170px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.05em;
+      color: $color-white;
+
+      span {
+        font-size: 30px;
+        display: block;
+        letter-spacing: 0;
+        color: $color-white;
+      }
+    }
+
+    p {
+      width: 50%;
+      float: right;
+      margin: auto;
+      padding: 6% 0;
+      @include default_text;
+      color: $color-white;
+    }
+
+    &.next {
+      h3 {
+        font-size: 90px;
+        padding-top: 25%;
+      }
+
+      p {
+        float: none;
+        width: 80%;
+        padding-right: 20%;
+        color: #6e6e73;
+        @include default_text;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .imgBox {
+    position: relative;
+    margin: 30% auto 15%;
+    min-width: 1200px;
+    width: 1200px;
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .img {
+      position: absolute;
+      top: inherit;
+      margin-top: -25%;
+      /*left:50%;transform:translateX(-100%); max-width:1212px;*/
+      z-index: -1;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-25%);
+        opacity: 0;
+        /*width: 100%;*/
+        /*height:105vh; */
+        max-height: 105vh;
+
+        &:first-child {
+          opacity: 1 !important;
+        }
+
+        &:nth-child(2) {
+          z-index: 2;
+        }
+
+        &:nth-child(3) {
+          z-index: 3;
+        }
+      }
+    }
+
+    .txt {
+      @include default_text2;
+      float: right;
+      width: 50%;
+      padding: 40% 0 12%;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+
+      dl {
+        width: 50%;
+        max-width: 400px;
+        padding: 20% 0 20% 10%;
+
+        dt {
+          color: #fff;
+        }
+
+        dd {
+          color: #6e6e73;
+        }
+      }
+    }
+  }
+
+  .scrollImg {
+    margin: auto;
+    padding: 5% 0 0;
+    max-width: $w-max2;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 1400px;
+
+    p {
+      color: #86868b;
+      padding-top: 35px;
+      @include default_text2;
+
+      strong {
+        color: $color-white;
+      }
+    }
+
+    article {
+      overflow: hidden;
+      height: 100%;
+
+      &.left {
+        width: 65%;
+
+        div {
+          width: 100%;
+          position: relative;
+          height: 120vh;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+          }
+        }
+
+        p {
+          width: 90%;
+        }
+      }
+
+      &.right {
+        width: 35%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .bottomBox {
+    padding-top: 20%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    i {
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+      width: 120%;
+      height: 90%;
+      font-size: 0;
+      z-index: -1;
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 0 100px 100px #000 inset;
+      background: #2a2b29;
+      background: -webkit-linear-gradient(to top, #161616, #2a2b29);
+      background: linear-gradient(to top, #161616, #2a2b29);
+    }
+
+    p {
+      color: #86868b;
+      @include default_text2;
+      width: 500px;
+      text-align: left;
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      margin-left: -600px;
+      z-index: 5;
+
+      strong {
+        color: #fff;
+      }
+    }
+
+    .sound {
+      position: absolute;
+      bottom: 8%;
+      z-index: 5;
+    }
+
+    // .human { 
+    //   // -webkit-mask-size: cover;
+    //   // -webkit-mask-image: url(https://www.apple.com/v/airpods-max/e/images/overview/audio_quality_spatial_figure_mask__bjqymmhjp876_large.png);
+    //   // mask-image: url(https://www.apple.com/v/airpods-max/e/images/overview/audio_quality_spatial_figure_mask__bjqymmhjp876_large.png); 
+    // }
+  }
+}
+
+.sc6 {
+  padding: 10% 0;
+
+  .tit {
+    max-width: $w-min;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 100px;
+
+    h3 {
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -.05em;
+      color: $color-black;
+
+      span {
+        font-size: 30px;
+        display: block;
+        letter-spacing: 0;
+        color: $color-black;
+      }
+    }
+
+    p {
+      float: right;
+      padding-top: 5%;
+      width: 60%;
+      color: $color-black;
+      @include default_text;
+      font-size: 25px;
+    }
+  }
+
+  .scroll2Box {
+    position: relative;
+    overflow: visible;
+    min-width: 1200px;
+    width: 1200px;
+    margin: auto;
+
+    .fixedImg {
+      position: absolute;
+      left: 0;
+      margin-left: -250px;
+
+      .view {
+        position: absolute;
+        top: 240px;
+        /*left:50%;*/
+        margin-left: calc(50% + 178px);
+        width: 293px;
+        height: 630px;
+        border-radius: 35px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 3;
+        }
+
+        video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 3;
+        }
+
+        .vs img {
+          z-index: 2;
+        }
+      }
+
+      >img {
+        /*height:95vh;*/
+        height: 920px;
+      }
+    }
+
+    .txt {
+      width: 30%;
+      margin-left: 70%;
+      padding: 20vh 0 40vh;
+
+      dl {
+        font-weight: 700;
+        padding: 30vh 0 0;
+
+        dt {
+          color: $color-primary;
+          font-size: 22px;
+          line-height: 1.2;
+        }
+
+        dd {
+          padding-top: 10px;
+          font-size: 22px;
+          line-height: 1.2;
+          color: #86868b;
+
+          sup {
+            vertical-align: top;
+            font-size: 15px;
+            color: #86868b;
+          }
+        }
+      }
+    }
+  }
+
+  .textCon {
+    overflow: hidden;
+    text-align: center;
+
+    h4 {
+      padding-top: 15vw;
+      text-align: center;
+      color: #1d1d1f;
+      font-size: 90px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    h5 {
+      font-size: 600px;
+      font-weight: 700;
+      margin-top: 5%;
+      line-height: 120%;
+    }
+
+    p {
+      @include default_text;
+      font-size: 22px;
+      padding-top: 2%;
+
+      sup {
+        font-size: 15px;
+        vertical-align: top;
+      }
+    }
+
+    .box1 {
+      padding-top: 5%;
+      max-width: $w-min;
+      margin: auto;
+      gap: 5%;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+
+      dl {
+        display: flex;
+        width: 30%;
+        align-items: start;
+        flex-direction: column;
+        color: #86868b;
+        @include default_text;
+        font-size: 22px;
+
+        dd {
+          padding-top: 2%;
+          color: #86868b;
+
+          sup {
+            font-size: 15px;
+            vertical-align: top;
+            color: #86868b;
+          }
+        }
+      }
+    }
+
+    .box2 {
+      p {
+        color: #86868b;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+        padding-top: 5%;
+      }
+    }
+  }
+
+  .boxCon {
+    max-width: $w-min;
+    margin: auto;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    >div {
+      width: 100%;
+      background: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+
+      &:nth-child(even) {
+        justify-content: flex-end;
+      }
+
+      .img {
+        width: 50%;
+        text-align: center;
+
+        &.clip {
+          position: relative;
+          padding: 5% 0 10%;
+
+          img:first-child {
+            position: absolute;
+            bottom: 11%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+          }
+        }
+      }
+
+      .txt {
+        width: 40%;
+        max-width: 480px;
+        float: left;
+        display: flex;
+        flex-direction: column;
+
+        dl {
+          overflow: hidden;
+
+          dt {
+            font-size: 40px;
+            color: $color-primary;
+            font-weight: 700;
+            line-height: 1.2;
+
+            img {
+              display: block;
+              padding-bottom: 15px;
+            }
+
+            svg {
+              display: block;
+              height: 30px;
+              padding-bottom: 15px;
+            }
+          }
+
+          dd {
+            padding-top: 15px;
+            color: #86868b;
+            font-weight: 700;
+            line-height: 1.3;
+            font-size: 20px;
+
+            &.small {
+              font-weight: 400;
+              color: $color-primary;
+              font-size: $font-size;
+            }
+
+            a {
+              display: block;
+              padding-top: 10px;
+              color: #06c;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 1.3;
+
+              &:after {
+                content: ">";
+                font-size: 15px;
+                vertical-align: middle;
+                padding-left: 5px;
+              }
+            }
+
+          }
+        }
+
+        ul {
+          padding-top: 20px;
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+
+          li {
+            font-size: 11px;
+            text-align: center;
+            position: relative;
+
+            i {
+              display: flex;
+              flex-direction: column;
+              align-content: center;
+              justify-content: center;
+              align-items: center;
+              margin: auto;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              /*border:1px solid #d2d2d7;*/
+              border: 1px solid transparent;
+
+              span {
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                position: relative;
+                background: #fff;
+                overflow: hidden;
+
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 100%;
+                  height: 50%;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  background: #d2d3d4;
+                  border-radius: 0 0 50% 50%;
+                }
+              }
+            }
+
+            p {
+              display: none;
+              padding: 5px 0;
+              font-size: 11px;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 200%;
+            }
+
+            &:nth-child(2) i span {
+              background: #3c3d3a;
+
+              &:after {
+                background: #595759;
+              }
+            }
+
+            &:nth-child(3) i span {
+              background: #2f506c;
+
+              &:after {
+                background: #91a6bb;
+              }
+            }
+
+            &:nth-child(4) i span {
+              background: #e4544d;
+
+              &:after {
+                background: #d8a097;
+              }
+            }
+
+            &:last-child i span {
+              background: #e7ece3;
+
+              &:after {
+                background: #afbfab;
+              }
+            }
+
+            &.on {
+              i {
+                border-color: #d2d2d7;
+              }
+
+              p {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .priceList {
+    padding: 5% 0;
+    text-align: center;
+
+    h4 {
+      text-align: center;
+      color: $color-primary;
+      @include default_text;
+      font-size: 70px;
+    }
+
+    >article {
+      max-width: 980px;
+      margin: auto;
+      padding-top: 5vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      overflow: hidden;
+
+      >div {
+        width: 100%;
+
+        >div {
+          height: 235px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        dl {
+          padding-bottom: 20px;
+          @include default_text;
+          font-size: 25px;
+
+          dt {
+            height: 70px;
+
+            span {
+              display: block;
+              font-size: 15px;
+              line-height: 1.2;
+              font-weight: 300;
+            }
+          }
+
+          dd {
+            font-weight: 400;
+            font-size: 18px;
+            overflow: hidden;
+
+            &:last-child {
+              height: 60px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-evenly;
+            }
+
+            a {
+              display: block;
+              margin: 0 auto;
+              font-size: 12px;
+              text-align: center;
+              flex-direction: column;
+
+              &:first-child {
+                width: 60px;
+                height: 24px;
+                background: #0071e3;
+                color: #fff;
+                border-radius: 12px;
+                line-height: 24px;
+              }
+
+              &:last-child {
+                color: #0071e3;
+              }
+            }
+          }
+        }
+
+        ul {
+          border-top: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+
+          li {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            height: 150px;
+            font-size: 14px;
+            line-height: 1.2;
+
+            sup {
+              font-size: 11px;
+              vertical-align: top;
+            }
+
+            img {
+              display: block;
+              margin: auto;
+              padding-bottom: 10px;
+            }
+
+            h5 {
+              font-size: 32px;
+              font-weight: 700;
+            }
+
+            p span {
+              display: block;
+
+              img {
+                display: inline-block;
+                vertical-align: top;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    >a {
+      padding-top: 30px;
+      display: inline-block;
+      vertical-align: top;
+      color: #06c;
+      font-size: 20px;
+    }
+  }
+}
+
+footer {
+  background: #f5f5f7;
+
+  section {
+    max-width: 980px;
+    margin: auto;
+
+    >ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 0;
+      gap: 10px;
+
+      li {
+        text-align: center;
+
+        img {
+          height: 70px;
+          display: block;
+          margin: auto;
+        }
+
+        dt {
+          @include default_text2;
+          color: $color-primary;
+        }
+
+        dd {
+          padding-top: 10px;
+          line-height: 1.5;
+          font-size: 14px;
+        }
+
+        i {
+          display: block;
+          padding-top: 10px;
+          color: #06c;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 1.3;
+
+          &:after {
+            content: ">";
+            font-size: 15px;
+            vertical-align: middle;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+
+    article {
+      border-top: 1px solid #d2d2d7;
+      border-bottom: 1px solid #d2d2d7;
+      padding: 15px 0;
+      margin: 15px 0;
+      font-size: 12px;
+
+      p {
+        color: #6e6e73;
+        line-height: 1.2;
+
+        a {
+          color: $color-black;
+          text-decoration: underline;
+        }
+      }
+
+      ol {
+        list-style: decimal;
+        padding-left: 10px;
+
+        li {
+          color: #6e6e73;
+          line-height: 1.2;
+          padding: 5px 0;
+        }
+      }
+    }
+
+    >p {
+      font-size: 13px;
+      color: #6e6e73;
+      line-height: 1.2;
+      padding: 10px 0;
+    }
+  }
+}

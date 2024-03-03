@@ -1,0 +1,1326 @@
+@charset "UTF-8";
+
+/*common 변수*/
+.inner {
+  overflow: hidden;
+}
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*mediquery*/
+/*reset*/
+* {
+  font-family: "AppleSDGothicNeo", "Noto Sans KR", sans-serif !important;
+  color: #1d1d1f;
+  font-size: 16px;
+  word-break: keep-all;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #1d1d1f;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+/*font common*/
+#wrap {
+  min-width: 1300px;
+}
+
+.gnb {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gnb nav {
+  width: calc(100% - 80px);
+}
+
+.gnb nav ul {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gnb nav ul li:last-child {
+  display: none;
+}
+
+.main-menu {
+  height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-menu:before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  background: #d6d6d6;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-menu header {
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-menu header h2 {
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.main-menu header ul {
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.main-menu header ul li a {
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+
+.main-menu header ul li:last-child a {
+  background: #0071e3;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 15px;
+}
+
+.sc1 {
+  text-align: center;
+  overflow: hidden;
+}
+
+.sc1 div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
+}
+
+.sc1 div img {
+  max-width: 888px;
+  width: 40%;
+  z-index: 5;
+  margin: 0 auto;
+  padding: 2% 0;
+}
+
+.sc1 div h2 {
+  font-size: clamp(100px, 16vw, 300px);
+  font-weight: 700;
+  position: absolute;
+  z-index: 3;
+  letter-spacing: -0.8vw;
+}
+
+.sc1 p {
+  margin: auto;
+  padding: 10% 0;
+  width: 63%;
+  max-width: 900px;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.sc2 {
+  min-width: 100%;
+  background: #000;
+  /*height:130vh;*/
+  position: relative;
+  min-width: 1200px;
+}
+
+.sc2 div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.sc2 div ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  height: 100%;
+  z-index: 5;
+}
+
+.sc2 div ul li {
+  color: #fff;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.2;
+  width: 50%;
+  min-width: 1200px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+.sc2 div ul li br {
+  display: none;
+}
+
+.sc2 video {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.sc2 p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.sc2 p button {
+  display: block;
+  font-size: 0;
+  position: sticky;
+  top: calc(100% - 55px);
+  left: calc(100% - 55px);
+  background: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/play_icon__dbmv349kdb42_large.svg) no-repeat center;
+  background-size: 30px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  cursor: pointer;
+}
+
+.sc2 p button.stop {
+  background-image: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/pause_icon__d19cdsq3uu4i_large.svg);
+}
+
+.sc3 {
+  padding: 10% 0 0;
+  color: #1d1d1f;
+}
+
+.sc3 .tit {
+  max-width: 1300px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.sc3 .tit h3 {
+  font-size: 170px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+.sc3 .tit h3 span {
+  font-size: 30px;
+  display: block;
+  letter-spacing: 0;
+}
+
+.sc3 .tit p {
+  width: 50%;
+  float: right;
+  padding: 10% 0 5%;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.sc3 .frameBox {
+  height: 2000px;
+  position: relative;
+  padding: 5% 0;
+}
+
+.sc3 .frameBox .moving {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.sc3 .frameBox .moving canvas {
+  display: block;
+  margin: auto;
+}
+
+.sc3 .frameBox .captions {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  height: 100%;
+}
+
+.sc3 .frameBox .captions p {
+  position: absolute;
+  color: #86868b;
+  width: 370px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.sc3 .frameBox .captions p.canopy-caption {
+  top: 75%;
+  left: 0;
+}
+
+.sc3 .frameBox .captions p.frame-caption {
+  top: 85%;
+  left: 0;
+}
+
+.sc3 .frameBox .captions p.tele-caption {
+  top: 80%;
+  right: 0 !important;
+}
+
+.sc3 .frameBox .captions p.cups-caption {
+  top: 98%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.sc3 .frameBox .captions p strong {
+  color: #000;
+}
+
+.sc3 .scrollImg {
+  margin: 0 auto;
+  padding-top: 250px;
+  max-width: 1600px;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 1800px;
+  overflow: hidden;
+}
+
+.sc3 .scrollImg article {
+  overflow: hidden;
+  height: 100%;
+}
+
+.sc3 .scrollImg article.left {
+  width: 65%;
+  position: relative;
+  height: 1450px;
+  overflow: hidden;
+}
+
+.sc3 .scrollImg article.left img {
+  position: absolute;
+  top: 0;
+}
+
+.sc3 .scrollImg article.right {
+  width: 35%;
+}
+
+.sc3 .scrollImg article.right div:last-child {
+  padding-top: 15%;
+}
+
+.sc3 .scrollImg article img {
+  width: 100%;
+}
+
+.sc3 .scrollImg article p {
+  color: #86868b;
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.sc3 .bottomBox {
+  width: 100%;
+  position: relative;
+  height: 50vw;
+  overflow: hidden;
+}
+
+.sc3 .bottomBox p.btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.sc3 .bottomBox p.btn button {
+  display: block;
+  font-size: 0;
+  position: sticky;
+  top: calc(100% - 55px);
+  left: calc(100% - 55px);
+  background: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/play_icon__dbmv349kdb42_large.svg) no-repeat center;
+  background-size: 30px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  cursor: pointer;
+}
+
+.sc3 .bottomBox p.btn button.stop {
+  background-image: url(https://www.apple.com/v/airpods-max/e/images/overview/controls/pause_icon__d19cdsq3uu4i_large.svg);
+}
+
+.sc3 .bottomBox video {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.sc3 .bottomBox img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.sc3 .bottomBox .txt {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sc3 .bottomBox .txt p {
+  color: #d1e8fd;
+}
+
+.sc3 .bottomBox .txt p strong {
+  color: #fff;
+}
+
+.sc4 {
+  padding: 10% 0;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.sc4 h3 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1d1d1f;
+}
+
+.sc5 {
+  padding: 10% 0 0;
+  background: #000;
+  opacity: 0.9999;
+  overflow: hidden;
+}
+
+.sc5 .tit {
+  max-width: 1230px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.sc5 .tit h3 {
+  font-size: 170px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  color: #fff;
+}
+
+.sc5 .tit h3 span {
+  font-size: 30px;
+  display: block;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.sc5 .tit p {
+  width: 50%;
+  float: right;
+  margin: auto;
+  padding: 6% 0;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: #fff;
+}
+
+.sc5 .tit.next h3 {
+  font-size: 90px;
+  padding-top: 25%;
+}
+
+.sc5 .tit.next p {
+  float: none;
+  width: 80%;
+  padding-right: 20%;
+  color: #6e6e73;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 25px;
+}
+
+.sc5 .imgBox {
+  position: relative;
+  margin: 30% auto 15%;
+  min-width: 1200px;
+  width: 1200px;
+}
+
+.sc5 .imgBox:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.sc5 .imgBox .img {
+  position: absolute;
+  top: inherit;
+  margin-top: -25%;
+  /*left:50%;transform:translateX(-100%); max-width:1212px;*/
+  z-index: -1;
+}
+
+.sc5 .imgBox .img img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-25%);
+  opacity: 0;
+  /*width: 100%;*/
+  /*height:105vh; */
+  max-height: 105vh;
+}
+
+.sc5 .imgBox .img img:first-child {
+  opacity: 1 !important;
+}
+
+.sc5 .imgBox .img img:nth-child(2) {
+  z-index: 2;
+}
+
+.sc5 .imgBox .img img:nth-child(3) {
+  z-index: 3;
+}
+
+.sc5 .imgBox .txt {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+  float: right;
+  width: 50%;
+  padding: 40% 0 12%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+.sc5 .imgBox .txt dl {
+  width: 50%;
+  max-width: 400px;
+  padding: 20% 0 20% 10%;
+}
+
+.sc5 .imgBox .txt dl dt {
+  color: #fff;
+}
+
+.sc5 .imgBox .txt dl dd {
+  color: #6e6e73;
+}
+
+.sc5 .scrollImg {
+  margin: auto;
+  padding: 5% 0 0;
+  max-width: 1600px;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 1400px;
+}
+
+.sc5 .scrollImg p {
+  color: #86868b;
+  padding-top: 35px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.sc5 .scrollImg p strong {
+  color: #fff;
+}
+
+.sc5 .scrollImg article {
+  overflow: hidden;
+  height: 100%;
+}
+
+.sc5 .scrollImg article.left {
+  width: 65%;
+}
+
+.sc5 .scrollImg article.left div {
+  width: 100%;
+  position: relative;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.sc5 .scrollImg article.left div img {
+  position: absolute;
+  top: 0;
+}
+
+.sc5 .scrollImg article.left p {
+  width: 90%;
+}
+
+.sc5 .scrollImg article.right {
+  width: 35%;
+}
+
+.sc5 .scrollImg article.right img {
+  width: 100%;
+}
+
+.sc5 .bottomBox {
+  padding-top: 20%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sc5 .bottomBox i {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 90%;
+  font-size: 0;
+  z-index: -1;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 0 100px 100px #000 inset;
+  background: #2a2b29;
+  background: linear-gradient(to top, #161616, #2a2b29);
+}
+
+.sc5 .bottomBox p {
+  color: #86868b;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+  width: 500px;
+  text-align: left;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -600px;
+  z-index: 5;
+}
+
+.sc5 .bottomBox p strong {
+  color: #fff;
+}
+
+.sc5 .bottomBox .sound {
+  position: absolute;
+  bottom: 8%;
+  z-index: 5;
+}
+
+.sc6 {
+  padding: 10% 0;
+}
+
+.sc6 .tit {
+  max-width: 1230px;
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.sc6 .tit h3 {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  color: #000;
+}
+
+.sc6 .tit h3 span {
+  font-size: 30px;
+  display: block;
+  letter-spacing: 0;
+  color: #000;
+}
+
+.sc6 .tit p {
+  float: right;
+  padding-top: 5%;
+  width: 60%;
+  color: #000;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 25px;
+}
+
+.sc6 .scroll2Box {
+  position: relative;
+  overflow: visible;
+  min-width: 1200px;
+  width: 1200px;
+  margin: auto;
+}
+
+.sc6 .scroll2Box .fixedImg {
+  position: absolute;
+  left: 0;
+  margin-left: -250px;
+}
+
+.sc6 .scroll2Box .fixedImg .view {
+  position: absolute;
+  top: 240px;
+  /*left:50%;*/
+  margin-left: calc(50% + 178px);
+  width: 293px;
+  height: 630px;
+  border-radius: 35px;
+  overflow: hidden;
+}
+
+.sc6 .scroll2Box .fixedImg .view img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.sc6 .scroll2Box .fixedImg .view video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.sc6 .scroll2Box .fixedImg .view .vs img {
+  z-index: 2;
+}
+
+.sc6 .scroll2Box .fixedImg>img {
+  /*height:95vh;*/
+  height: 920px;
+}
+
+.sc6 .scroll2Box .txt {
+  width: 30%;
+  margin-left: 70%;
+  padding: 20vh 0 40vh;
+}
+
+.sc6 .scroll2Box .txt dl {
+  font-weight: 700;
+  padding: 30vh 0 0;
+}
+
+.sc6 .scroll2Box .txt dl dt {
+  color: #1d1d1f;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.sc6 .scroll2Box .txt dl dd {
+  padding-top: 10px;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #86868b;
+}
+
+.sc6 .scroll2Box .txt dl dd sup {
+  vertical-align: top;
+  font-size: 15px;
+  color: #86868b;
+}
+
+.sc6 .textCon {
+  overflow: hidden;
+  text-align: center;
+}
+
+.sc6 .textCon h4 {
+  padding-top: 15vw;
+  text-align: center;
+  color: #1d1d1f;
+  font-size: 90px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.sc6 .textCon h5 {
+  font-size: 600px;
+  font-weight: 700;
+  margin-top: 5%;
+  line-height: 120%;
+}
+
+.sc6 .textCon p {
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 22px;
+  padding-top: 2%;
+}
+
+.sc6 .textCon p sup {
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.sc6 .textCon .box1 {
+  padding-top: 5%;
+  max-width: 1230px;
+  margin: auto;
+  gap: 5%;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.sc6 .textCon .box1 dl {
+  display: flex;
+  width: 30%;
+  align-items: start;
+  flex-direction: column;
+  color: #86868b;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 22px;
+}
+
+.sc6 .textCon .box1 dl dd {
+  padding-top: 2%;
+  color: #86868b;
+}
+
+.sc6 .textCon .box1 dl dd sup {
+  font-size: 15px;
+  vertical-align: top;
+  color: #86868b;
+}
+
+.sc6 .textCon .box2 p {
+  color: #86868b;
+}
+
+.sc6 .textCon .box2 img {
+  display: block;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.sc6 .boxCon {
+  max-width: 1230px;
+  margin: auto;
+  padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.sc6 .boxCon>div {
+  width: 100%;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.sc6 .boxCon>div:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.sc6 .boxCon>div .img {
+  width: 50%;
+  text-align: center;
+}
+
+.sc6 .boxCon>div .img.clip {
+  position: relative;
+  padding: 5% 0 10%;
+}
+
+.sc6 .boxCon>div .img.clip img:first-child {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sc6 .boxCon>div .txt {
+  width: 40%;
+  max-width: 480px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.sc6 .boxCon>div .txt dl {
+  overflow: hidden;
+}
+
+.sc6 .boxCon>div .txt dl dt {
+  font-size: 40px;
+  color: #1d1d1f;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sc6 .boxCon>div .txt dl dt img {
+  display: block;
+  padding-bottom: 15px;
+}
+
+.sc6 .boxCon>div .txt dl dt svg {
+  display: block;
+  height: 30px;
+  padding-bottom: 15px;
+}
+
+.sc6 .boxCon>div .txt dl dd {
+  padding-top: 15px;
+  color: #86868b;
+  font-weight: 700;
+  line-height: 1.3;
+  font-size: 20px;
+}
+
+.sc6 .boxCon>div .txt dl dd.small {
+  font-weight: 400;
+  color: #1d1d1f;
+  font-size: 16px;
+}
+
+.sc6 .boxCon>div .txt dl dd a {
+  display: block;
+  padding-top: 10px;
+  color: #06c;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.sc6 .boxCon>div .txt dl dd a:after {
+  content: ">";
+  font-size: 15px;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+.sc6 .boxCon>div .txt ul {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.sc6 .boxCon>div .txt ul li {
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+}
+
+.sc6 .boxCon>div .txt ul li i {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /*border:1px solid #d2d2d7;*/
+  border: 1px solid transparent;
+}
+
+.sc6 .boxCon>div .txt ul li i span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+.sc6 .boxCon>div .txt ul li i span:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #d2d3d4;
+  border-radius: 0 0 50% 50%;
+}
+
+.sc6 .boxCon>div .txt ul li p {
+  display: none;
+  padding: 5px 0;
+  font-size: 11px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(2) i span {
+  background: #3c3d3a;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(2) i span:after {
+  background: #595759;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(3) i span {
+  background: #2f506c;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(3) i span:after {
+  background: #91a6bb;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(4) i span {
+  background: #e4544d;
+}
+
+.sc6 .boxCon>div .txt ul li:nth-child(4) i span:after {
+  background: #d8a097;
+}
+
+.sc6 .boxCon>div .txt ul li:last-child i span {
+  background: #e7ece3;
+}
+
+.sc6 .boxCon>div .txt ul li:last-child i span:after {
+  background: #afbfab;
+}
+
+.sc6 .boxCon>div .txt ul li.on i {
+  border-color: #d2d2d7;
+}
+
+.sc6 .boxCon>div .txt ul li.on p {
+  display: block;
+}
+
+.sc6 .priceList {
+  padding: 5% 0;
+  text-align: center;
+}
+
+.sc6 .priceList h4 {
+  text-align: center;
+  color: #1d1d1f;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 70px;
+}
+
+.sc6 .priceList>article {
+  max-width: 980px;
+  margin: auto;
+  padding-top: 5vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.sc6 .priceList>article>div {
+  width: 100%;
+}
+
+.sc6 .priceList>article>div>div {
+  height: 235px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc6 .priceList>article>div dl {
+  padding-bottom: 20px;
+  font-size: 30px;
+  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  font-size: 25px;
+}
+
+.sc6 .priceList>article>div dl dt {
+  height: 70px;
+}
+
+.sc6 .priceList>article>div dl dt span {
+  display: block;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.sc6 .priceList>article>div dl dd {
+  font-weight: 400;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.sc6 .priceList>article>div dl dd:last-child {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sc6 .priceList>article>div dl dd a {
+  display: block;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.sc6 .priceList>article>div dl dd a:first-child {
+  width: 60px;
+  height: 24px;
+  background: #0071e3;
+  color: #fff;
+  border-radius: 12px;
+  line-height: 24px;
+}
+
+.sc6 .priceList>article>div dl dd a:last-child {
+  color: #0071e3;
+}
+
+.sc6 .priceList>article>div ul {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.sc6 .priceList>article>div ul li {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 150px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.sc6 .priceList>article>div ul li sup {
+  font-size: 11px;
+  vertical-align: top;
+}
+
+.sc6 .priceList>article>div ul li img {
+  display: block;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.sc6 .priceList>article>div ul li h5 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.sc6 .priceList>article>div ul li p span {
+  display: block;
+}
+
+.sc6 .priceList>article>div ul li p span img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sc6 .priceList>a {
+  padding-top: 30px;
+  display: inline-block;
+  vertical-align: top;
+  color: #06c;
+  font-size: 20px;
+}
+
+footer {
+  background: #f5f5f7;
+}
+
+footer section {
+  max-width: 980px;
+  margin: auto;
+}
+
+footer section>ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  gap: 10px;
+}
+
+footer section>ul li {
+  text-align: center;
+}
+
+footer section>ul li img {
+  height: 70px;
+  display: block;
+  margin: auto;
+}
+
+footer section>ul li dt {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+footer section>ul li dd {
+  padding-top: 10px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+footer section>ul li i {
+  display: block;
+  padding-top: 10px;
+  color: #06c;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+footer section>ul li i:after {
+  content: ">";
+  font-size: 15px;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+footer section article {
+  border-top: 1px solid #d2d2d7;
+  border-bottom: 1px solid #d2d2d7;
+  padding: 15px 0;
+  margin: 15px 0;
+  font-size: 12px;
+}
+
+footer section article p {
+  color: #6e6e73;
+  line-height: 1.2;
+}
+
+footer section article p a {
+  color: #000;
+  text-decoration: underline;
+}
+
+footer section article ol {
+  list-style: decimal;
+  padding-left: 10px;
+}
+
+footer section article ol li {
+  color: #6e6e73;
+  line-height: 1.2;
+  padding: 5px 0;
+}
+
+footer section>p {
+  font-size: 13px;
+  color: #6e6e73;
+  line-height: 1.2;
+  padding: 10px 0;
+}
